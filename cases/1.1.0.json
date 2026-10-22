@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ZW-001",
+    "text": "카​지​노 가입 보너스 지급",
+    "violation": true,
+    "source": "synthetic:knowledge-demo/v1"
+  },
+  {
+    "id": "ZW-002",
+    "text": "슬⁠롯 무료 체험 바로가기",
+    "violation": true,
+    "source": "synthetic:knowledge-demo/v1"
+  },
+  {
+    "id": "ZW-N001",
+    "text": "카​지​노 광고 신고 안내",
+    "violation": false,
+    "source": "synthetic:knowledge-demo/v1"
+  },
+  {
+    "id": "ZW-N002",
+    "text": "도서관 무​료 체험 예약",
+    "violation": false,
+    "source": "synthetic:knowledge-demo/v1"
+  },
+  {
+    "id": "ZW-N003",
+    "text": "가족 👨‍👩‍👧 행사 안내",
+    "violation": false,
+    "source": "synthetic:knowledge-demo/v1"
+  }
+]

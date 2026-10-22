@@ -1,0 +1,77 @@
+{
+  "version": "1.0.0",
+  "skills": [
+    {
+      "id": "HOMOGLYPH",
+      "name": "닮은꼴 문자 위장",
+      "instruction": ""
+    },
+    {
+      "id": "JAMO",
+      "name": "한글 자모 분해",
+      "instruction": ""
+    },
+    {
+      "id": "TRANSPARENT",
+      "name": "투명 텍스트",
+      "instruction": ""
+    },
+    {
+      "id": "OFFSCREEN",
+      "name": "화면 밖 은닉",
+      "instruction": ""
+    }
+  ],
+  "rules": {
+    "zero_width": false,
+    "ad_terms": [
+      "카지노",
+      "슬롯",
+      "먹튀",
+      "놀이터",
+      "바카라",
+      "토토",
+      "성인만남",
+      "조건만남",
+      "출장마사지",
+      "casino",
+      "slot",
+      "mega-bet",
+      "bet",
+      "sex",
+      "porn"
+    ],
+    "intent_terms": [
+      "가입",
+      "첫충",
+      "충전",
+      "보너스",
+      "무료",
+      "체험",
+      "바로가기",
+      "텔레그램",
+      "상담",
+      "지급",
+      "할인",
+      "예약",
+      "추천코드",
+      "bonus",
+      "join",
+      "deposit",
+      "코드"
+    ],
+    "negative_terms": [
+      "예방",
+      "신고 안내",
+      "신고안내",
+      "근절",
+      "피해 상담",
+      "피해상담",
+      "불법광고 사례",
+      "도박중독",
+      "교육자료",
+      "금지 안내",
+      "금지안내"
+    ]
+  }
+}

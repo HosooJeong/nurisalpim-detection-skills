@@ -1,0 +1,142 @@
+{
+  "version": "1.1.0",
+  "skills": [
+    {
+      "id": "HOMOGLYPH",
+      "name": "닮은꼴 문자 위장",
+      "instruction": "---\nname: homoglyph\ndescription: 전각·키릴·그리스·숫자 치환으로 광고 단어를 위장한 문맥 검토\n---\n원문과 복원문을 비교한다. 유사 문자 사용 자체는 위반이 아니다. 도박·성인물 광고의 가입, 구매, 충전, 연락, 외부 이동 유도가 있는지 검토한다. 외국어 교육·정상 이름·일반 숫자는 제외한다. 숫자 치환은 단어 내부에서만 문맥적으로 해석한다. 기법 코드와 위치는 엔진의 관측값을 사용한다.\n"
+    },
+    {
+      "id": "JAMO",
+      "name": "한글 자모 분해",
+      "instruction": "---\nname: jamo\ndescription: 한글 호환 자모·분해 자모로 작성된 광고 문맥 검토\n---\n분리된 한글 자모를 음절로 복원하여 광고 유도 여부를 판단한다. 예: ㅋㅏㅈㅣㄴㅗ → 카지노. 자모 사이 공백과 여러 요소로 분할된 주변 문맥을 함께 본다. 한글 교육자료·키보드 안내·일반 채팅 자모는 광고로 간주하지 않는다. 복원문을 증거 원문 대신 출력하지 않는다.\n"
+    },
+    {
+      "id": "TRANSPARENT",
+      "name": "투명 텍스트",
+      "instruction": "---\nname: transparent\ndescription: 색상·투명도로 은닉된 텍스트의 광고성 판단\n---\nopacity, 투명 글자색, 배경과 같은 색 등 엔진이 제공한 시각적 근거를 참고한다. 상위 요소의 스타일 상속이 있을 수 있다. 숨김만으로 위반을 판정하지 말고 원문의 광고 유도 문맥을 본다. 정상 메뉴·접근성 문구·신고 및 예방 콘텐츠는 제외한다. 스타일을 추측해서 새 기법을 붙이지 않는다.\n"
+    },
+    {
+      "id": "OFFSCREEN",
+      "name": "화면 밖 은닉",
+      "instruction": "---\nname: offscreen\ndescription: 극소 크기·비표시·음수 배치로 은닉된 광고 문맥 검토\n---\n엔진의 display:none, 극소 글자, 음수 좌표 등 근거를 사용한다. 문서 아래에 있어 스크롤이 필요한 정상 본문을 화면 밖 은닉으로 해석하지 않는다. 닫힌 메뉴, 탭, 스크린리더 안내의 정상 용도를 구분한다. 광고 문구가 정상 예방 안내의 인용인 경우 위반으로 판단하지 않는다.\n"
+    },
+    {
+      "id": "ZERO_WIDTH",
+      "name": "제로폭 문자 우회",
+      "instruction": "---\nname: zero-width\ndescription: 보이지 않는 문자와 제어문자를 섞은 광고 필터 우회 검토\n---\n원문과 제로폭·방향 제어문자 제거 후 복원문을 비교한다. 문자 사이에 보이지 않는 문자를 삽입해 도박·성인물 광고 키워드를 회피했는지 판단한다. 정상 이모지 조합, 언어 문자 결합에 사용되는 제어문자는 광고 문맥 없이 위반으로 보지 않는다. 추가 유형은 ZERO_WIDTH로 보고한다.\n"
+    }
+  ],
+  "rules": {
+    "zero_width": true,
+    "ad_terms": [
+      "카지노",
+      "슬롯",
+      "먹튀",
+      "놀이터",
+      "바카라",
+      "토토",
+      "성인만남",
+      "조건만남",
+      "출장마사지",
+      "casino",
+      "slot",
+      "mega-bet",
+      "bet",
+      "sex",
+      "porn"
+    ],
+    "intent_terms": [
+      "가입",
+      "첫충",
+      "충전",
+      "보너스",
+      "무료",
+      "체험",
+      "바로가기",
+      "텔레그램",
+      "상담",
+      "지급",
+      "할인",
+      "예약",
+      "추천코드",
+      "bonus",
+      "join",
+      "deposit",
+      "코드"
+    ],
+    "negative_terms": [
+      "예방",
+      "신고 안내",
+      "신고안내",
+      "근절",
+      "피해 상담",
+      "피해상담",
+      "불법광고 사례",
+      "도박중독",
+      "교육자료",
+      "금지 안내",
+      "금지안내"
+    ]
+  },
+  "cases": [
+    {
+      "text": "카지노 가입 보너스 지급",
+      "violation": true
+    },
+    {
+      "text": "ㅋㅏㅈㅣㄴㅗ 가입 보너스",
+      "violation": true
+    },
+    {
+      "text": "ｍｅｇａ－ＢＥＴ 첫충 30％ 지급",
+      "violation": true
+    },
+    {
+      "text": "무료 슬롯 체험 바로가기",
+      "violation": true
+    },
+    {
+      "text": "불법도박 예방 및 피해 상담 안내",
+      "violation": false
+    },
+    {
+      "text": "카지노 광고 신고 안내",
+      "violation": false
+    },
+    {
+      "text": "도서관 강좌 무료 체험 예약",
+      "violation": false
+    },
+    {
+      "id": "ZW-001",
+      "text": "카​지​노 가입 보너스 지급",
+      "violation": true,
+      "source": "synthetic:knowledge-demo/v1"
+    },
+    {
+      "id": "ZW-002",
+      "text": "슬⁠롯 무료 체험 바로가기",
+      "violation": true,
+      "source": "synthetic:knowledge-demo/v1"
+    },
+    {
+      "id": "ZW-N001",
+      "text": "카​지​노 광고 신고 안내",
+      "violation": false,
+      "source": "synthetic:knowledge-demo/v1"
+    },
+    {
+      "id": "ZW-N002",
+      "text": "도서관 무​료 체험 예약",
+      "violation": false,
+      "source": "synthetic:knowledge-demo/v1"
+    },
+    {
+      "id": "ZW-N003",
+      "text": "가족 👨‍👩‍👧 행사 안내",
+      "violation": false,
+      "source": "synthetic:knowledge-demo/v1"
+    }
+  ]
+}
