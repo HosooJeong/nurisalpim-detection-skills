@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-23",
+  "app_version": "0.5.0-rc1",
+  "site_sha256": "869a27e971842117315fa980af614f635e8b9c2f43a6c4e13a92698b2723a15f",
+  "pack_commit": "063e0c3dca00126b0d3acd304529ded073105269",
+  "packs": {
+    "before": "b878a09ba8acec3f95baff0749848e346f246e727606d12e5fb77bd11034b109",
+    "after": "13b8e1000a34514d9099ac1513af73595cd1fe16d336153d791726749e408d02"
+  },
+  "fixture": {
+    "advertising_units": 6,
+    "normal_counterexamples": 3,
+    "synthetic": true
+  },
+  "rules": {
+    "before": {
+      "findings": 4,
+      "extra": 0,
+      "status": "completed",
+      "unresolved": 0,
+      "calls": 0
+    },
+    "after": {
+      "findings": 4,
+      "extra": 2,
+      "status": "completed",
+      "unresolved": 0,
+      "calls": 0
+    },
+    "false_positives": 0,
+    "elapsed_sec": 9.3
+  },
+  "actual_model": {
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "transport": "codex",
+    "tools_used": 0,
+    "before": {
+      "findings": 4,
+      "extra": 0,
+      "status": "partial",
+      "unresolved": 2,
+      "calls": 1
+    },
+    "after": {
+      "findings": 4,
+      "extra": 2,
+      "status": "completed",
+      "unresolved": 0,
+      "calls": 1
+    },
+    "false_positives": 0,
+    "elapsed_sec": 69.3
+  },
+  "anonymous_public_download": true,
+  "hash_mismatch_rejected": true,
+  "limitations": [
+    "One small synthetic comparison, not a production-site benchmark.",
+    "Activates an existing ZERO_WIDTH verifier; no new algorithm or model training.",
+    "Real model inference used Codex CLI; paid OpenAI API inference was not tested."
+  ]
+}
